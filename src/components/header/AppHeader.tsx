@@ -1,3 +1,4 @@
+import WButton from '../ui/button/Button';
 import styles from './header.module.scss';
 
 const AppHeader = () => {
@@ -14,8 +15,12 @@ const AppHeader = () => {
           .AI
         </span>
       </div>
+      <div className="w-flex">
+        <WButton text="Войти" />
+        <WButton text="Начать бесплатно" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default AppHeader;
