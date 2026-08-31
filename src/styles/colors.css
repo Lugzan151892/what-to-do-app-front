@@ -1,0 +1,13 @@
+:root {
+  --main-background: #0B0F19;
+  --main-salad: #D9F99D;
+  --main-purple: #7C3AED;
+  --main-white: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
