@@ -1,0 +1,23 @@
+.button {
+  cursor: pointer;
+}
+
+.wButtonBordered {
+  background: transparent;
+  color: var(--cream);
+  transition: all 0.2s ease;
+  border: 1px solid var(--button-border);
+  border-radius: 999px;
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+
+  &:hover {
+    border-color: #ff553366;
+    background: #ff55330f;
+  }
+}
+
+.wButtonFilled {
+
+}

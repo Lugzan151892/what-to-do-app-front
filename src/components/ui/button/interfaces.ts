@@ -1,0 +1,4 @@
+export enum EBUTTON_TYPE {
+  BORDERED = 'BORDERED',
+  FILLED = 'FILLED',
+}

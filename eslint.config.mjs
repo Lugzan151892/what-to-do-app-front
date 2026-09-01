@@ -7,15 +7,15 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   stylistic.configs.recommended,
-  // Override default ignores of eslint-config-next.
   {
     rules: {
       'quotes': ['error', 'single'],
       '@stylistic/indent': ['error', 2],
       '@stylistic/semi': ['error', 'always', { omitLastInOneLineBlock: false }],
       '@stylistic/no-multi-spaces': 'error',
-      '@stylistic/jsx-first-prop-new-line': ['error', 'multiline'],
+      '@stylistic/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
       '@stylistic/jsx-max-props-per-line': ['error', { maximum: 1 }],
+      '@stylistic/jsx-closing-bracket-location': ['error', 'tag-aligned'],
       'no-trailing-spaces': 'error',
     },
   },

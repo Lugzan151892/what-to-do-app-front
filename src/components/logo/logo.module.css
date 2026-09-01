@@ -1,0 +1,27 @@
+.logo {
+  border-radius: 8px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+}
+
+.logoText {
+  font-style: italic;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* class="display-font font-bold text-lg tracking-tight"
+        style="color: var(--cream);" */
+
+.text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--cream);
+}

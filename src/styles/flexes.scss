@@ -1,0 +1,48 @@
+.w-flex {
+  display: flex;
+
+  &-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--inline { display: inline-flex; }
+  &--space-between { justify-content: space-between; }
+  &-column { flex-direction: column; }
+  &-baseline { align-items: baseline; }
+
+  &-wrap { flex-wrap: wrap; }
+  &-grow-0 { flex-grow: 0; }
+  &-grow-1 { flex-grow: 1; }
+  &-shrink-0 { flex-shrink: 0; }
+  &-shrink-1 { flex-shrink: 1; }
+}
+
+
+.w-justify {
+  &-start { justify-content: flex-start; }
+  &-end { justify-content: flex-end; }
+  &-center { justify-content: center; }
+  &-space-between { justify-content: space-between; }
+}
+
+.w-align {
+  &-start { align-items: flex-start; }
+  &-end { align-items: flex-end; }
+  &-center { align-items: center; }
+  &-baseline { align-items: baseline; }
+
+  &-self-start { align-self: flex-start; }
+  &-self-end { align-self: flex-end; }
+  &-self-center { align-self: center; }
+  &-self-baseline { align-self: baseline; }
+  &-self-stretch { align-self: stretch; }
+}
+
+@for $i from 0 through 100 {
+  $val: $i * 2;
+
+  .w-gap-#{$val} {
+    gap: #{$val}px;
+  }
+}

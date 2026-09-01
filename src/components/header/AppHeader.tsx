@@ -1,12 +1,12 @@
-import WButton from '../ui/button/Button';
-import styles from './header.module.scss';
+import { EBUTTON_TYPE } from '@/components/ui/button/interfaces';
+import WButton from '@/components/ui/button/WButton';
+import styles from '@/components/header/header.module.scss';
+import AppLogo from '@/components/logo/AppLogo';
 
 const AppHeader = () => {
   return (
     <div className={styles.header}>
-      <div>
-        logo
-      </div>
+      <AppLogo />
       <div>
         <span>
           Weekender
@@ -15,9 +15,12 @@ const AppHeader = () => {
           .AI
         </span>
       </div>
-      <div className="w-flex">
+      <div className="w-flex w-gap-12">
         <WButton text="Войти" />
-        <WButton text="Начать бесплатно" />
+        <WButton
+          text="Начать бесплатно"
+          type={EBUTTON_TYPE.FILLED}
+        />
       </div>
     </div>
   );
