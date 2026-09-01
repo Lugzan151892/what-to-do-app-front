@@ -6,6 +6,7 @@
   justify-content: center;
   height: 32px;
   width: 32px;
+  font-family: var(--font-fraunces), serif;
 }
 
 .logoText {
@@ -16,12 +17,11 @@
   line-height: 20px;
 }
 
-/* class="display-font font-bold text-lg tracking-tight"
-        style="color: var(--cream);" */
-
 .text {
+  font-family: var(--font-fraunces), serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
+  letter-spacing: -0.45px;
   color: var(--cream);
 }

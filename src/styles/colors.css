@@ -4,6 +4,7 @@
   --accent: #ff5533;
   --accent-secondary: #FFB84D;
   --cream: #F5F0E8;
+  --muted: #f5f0e873;
   --button-border: #ffffff12;
 }
 
@@ -23,4 +24,14 @@
 
 .w-border--full {
   border-radius: 999px;
+}
+
+.w-link {
+  color: var(--muted);
+  transition: all 0.4s ease;
+  font-weight: 500;
+  
+  &:hover {
+    color: var(--cream);
+  }
 }

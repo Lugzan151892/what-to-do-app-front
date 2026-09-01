@@ -19,7 +19,7 @@ const WButton: React.FC<IWButtonProps> = ({ text, type = EBUTTON_TYPE.BORDERED, 
   }, [type]);
   return (
     <button
-      className={clsx('w-flex w-px-20 w-py-10', styles.button, className)}
+      className={clsx('w-px-20 w-py-10', styles.button, className)}
       onClick={onClick}
     >
       {text}

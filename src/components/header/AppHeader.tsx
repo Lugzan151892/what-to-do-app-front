@@ -7,14 +7,34 @@ const AppHeader = () => {
   return (
     <div className={styles.header}>
       <AppLogo />
-      <div>
-        <span>
-          Weekender
-        </span>
-        <span className={styles.textSalad}>
-          .AI
-        </span>
-      </div>
+      <nav>
+        <ul className="w-flex w-flex-center w-gap-32">
+          <li>
+            <a
+              className="w-link"
+              href="#"
+            >
+              Как это работает
+            </a>
+          </li>
+          <li>
+            <a
+              className="w-link"
+              href="#"
+            >
+              Возможности
+            </a>
+          </li>
+          <li>
+            <a
+              className="w-link"
+              href="#"
+            >
+              AI генератор
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div className="w-flex w-gap-12">
         <WButton text="Войти" />
         <WButton

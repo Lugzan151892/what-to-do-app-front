@@ -1,5 +1,7 @@
 .button {
   cursor: pointer;
+  border-radius: 999px;
+  display: block;
 }
 
 .wButtonBordered {
@@ -7,8 +9,6 @@
   color: var(--cream);
   transition: all 0.2s ease;
   border: 1px solid var(--button-border);
-  border-radius: 999px;
-  display: block;
   font-size: 14px;
   line-height: 20px;
 
@@ -19,5 +19,15 @@
 }
 
 .wButtonFilled {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  font-weight: 600;
+  letter-spacing: -0.14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px #ff553373;
+  }
 }
