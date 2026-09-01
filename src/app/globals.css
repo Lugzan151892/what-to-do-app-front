@@ -1,4 +1,6 @@
 @import '@/styles/colors.css';
+@import '@/styles/variables.scss';
+@import '@/styles/flexes.scss';
 
 html {
   height: 100%;
@@ -16,7 +18,9 @@ body {
   flex-direction: column;
   color: var(--main-white);
   background: var(--main-background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta), Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
