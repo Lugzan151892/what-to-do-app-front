@@ -1,0 +1,308 @@
+// Переменные
+$card: #141420;
+$border: rgba(255, 255, 255, 0.07);
+$accent: #ff5533;
+$accent2: #ffb84d;
+$cream: #f5f0e8;
+$muted: rgba(245, 240, 232, 0.45);
+
+// Анимации
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Контейнер карточек
+.cardsContainer {
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  margin: 4rem auto 0;
+  height: 280px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease 0.8s forwards;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+// Базовые стили карточек (Glassmorphic)
+.glassCard {
+  background: $card;
+  border: 1px solid $border;
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 85, 51, 0.25);
+    box-shadow: 0 20px 60px rgba(255, 85, 51, 0.1);
+  }
+}
+
+// Главная превью карточка
+.previewMain {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  top: 0;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  animation: float 6s ease-in-out infinite;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid $border;
+}
+
+.headerTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accentDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: $accent;
+}
+
+.headerText {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: $muted;
+}
+
+.aiBadge {
+  background: linear-gradient(135deg, #ff5533, #ffb84d);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  color: white;
+}
+
+.cardContent {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+
+  &.highlight {
+    background: rgba(255, 85, 51, 0.08);
+    border: 1px solid rgba(255, 85, 51, 0.15);
+  }
+}
+
+.itemMain {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.iconWrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.5rem;
+  }
+}
+
+.itemTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $cream;
+}
+
+.itemSubtitle {
+  font-size: 0.75rem;
+  color: $muted;
+}
+
+.badgeNew {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 85, 51, 0.15);
+  color: $accent;
+}
+
+.badgeTop {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 184, 77, 0.12);
+  color: $accent2;
+}
+
+.stars {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.star {
+  color: $accent2;
+  font-size: 0.875rem;
+
+  &.dim {
+    color: rgba(255, 184, 77, 0.3);
+  }
+}
+
+// Боковая карточка: Оценка
+.previewRating {
+  position: absolute;
+  width: 180px;
+  left: calc(50% - 310px);
+  top: 40px;
+  padding: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: float 7s ease-in-out 1s infinite;
+}
+
+.ratingLabel {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  color: $muted;
+}
+
+.ratingTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: $cream;
+}
+
+.ratingStars {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.ratingQuote {
+  font-size: 0.75rem;
+  color: $muted;
+}
+
+// Боковая карточка: Компания
+.previewGroup {
+  position: absolute;
+  width: 170px;
+  right: calc(50% - 310px);
+  top: 20px;
+  padding: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: float 5s ease-in-out 0.5s infinite;
+}
+
+.groupLabel {
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+  color: $muted;
+}
+
+.groupBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.groupCount {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: $accent;
+  color: white;
+}
+
+.groupText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $cream;
+}
+
+.groupDivider {
+  height: 1px;
+  background-color: $border;
+  margin-bottom: 0.75rem;
+}
+
+.groupFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.statusDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: $accent;
+}
+
+.groupStatusText {
+  font-size: 0.75rem;
+  color: $muted;
+}
