@@ -3,11 +3,12 @@ import Image from 'next/image';
 import masksIcon from '@/assets/static-icons/masks.svg';
 import bicycleIcon from '@/assets/static-icons/bicycle.svg';
 import blockIcon from '@/assets/static-icons/block.svg';
+import clsx from '@/app/utils/style-utils/clsx';
 
 const FloatingCards = () => {
   return (
     <section className={floatingCardsStyles.cardsContainer}>
-      <div className={`${floatingCardsStyles.glassCard} ${floatingCardsStyles.previewMain}`}>
+      <div className={clsx('w-card', floatingCardsStyles.glassCard, floatingCardsStyles.previewMain)}>
         <div className={floatingCardsStyles.cardHeader}>
           <div className={floatingCardsStyles.headerTitleGroup}>
             <div className={floatingCardsStyles.accentDot} />
@@ -80,7 +81,7 @@ const FloatingCards = () => {
         </div>
       </div>
 
-      <div className={`${floatingCardsStyles.glassCard} ${floatingCardsStyles.previewRating}`}>
+      <div className={clsx('w-card', floatingCardsStyles.glassCard, floatingCardsStyles.previewRating)}>
         <div className={floatingCardsStyles.ratingLabel}>Последняя оценка</div>
         <div className={floatingCardsStyles.ratingTitle}>Каток в парке</div>
         <div className={floatingCardsStyles.ratingStars}>
@@ -93,7 +94,7 @@ const FloatingCards = () => {
         <div className={floatingCardsStyles.ratingQuote}>«Очень круто, хочу снова!»</div>
       </div>
 
-      <div className={`${floatingCardsStyles.glassCard} ${floatingCardsStyles.previewGroup}`}>
+      <div className={clsx('w-card', floatingCardsStyles.glassCard, floatingCardsStyles.previewGroup)}>
         <div className={floatingCardsStyles.groupLabel}>Ищем на компанию</div>
         <div className={floatingCardsStyles.groupBadge}>
           <div className={floatingCardsStyles.groupCount}>3</div>

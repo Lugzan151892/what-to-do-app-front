@@ -1,5 +1,5 @@
 import workDescriptionStyles from '@/app/(views)/(main-page)/components/WorkDescription/workDescription.module.scss';
-import WorkDescriptionCard, { IWorkDescriptionCardProps } from './WorkDescriptionCard';
+import WorkDescriptionCard, { IWorkDescriptionCardProps } from '@/app/(views)/(main-page)/components/WorkDescription/WorkDescriptionCard';
 
 const cardsData: Array<IWorkDescriptionCardProps> = [
   {

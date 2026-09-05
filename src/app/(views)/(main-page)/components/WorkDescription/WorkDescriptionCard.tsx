@@ -4,6 +4,7 @@ import clock from '@/assets/static-icons/clock.svg';
 import rate from '@/assets/static-icons/rate.svg';
 import generated from '@/assets/static-icons/generated.svg';
 import { useMemo } from 'react';
+import clsx from '@/app/utils/style-utils/clsx';
 
 export interface IWorkDescriptionCardProps {
   order: string
@@ -25,7 +26,7 @@ const WorkDescriptionCard: React.FC<IWorkDescriptionCardProps> = ({ order, text,
     return rate;
   }, [icon]);
   return (
-    <div className={workDescriptionStyles.card}>
+    <div className={clsx('w-card', workDescriptionStyles.card)}>
       <div className={workDescriptionStyles.cardNumber}>
         {order}
       </div>

@@ -23,7 +23,7 @@ const TickerText = () => {
   );
 
   return (
-    <div className={clsx(tickerTextStyles.container, 'w-mt-24')}>
+    <div className={clsx(tickerTextStyles.container, 'w-mt-80')}>
       <div className={clsx(tickerTextStyles.track, 'w-flex w-flex-center')}>
         {renderGroup()}
         {renderGroup()}
