@@ -1,0 +1,38 @@
+@keyframes moving {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+
+.track {
+  width: max-content;
+  animation: moving 30s linear infinite;
+}
+
+.group {
+  display: flex;
+  gap: 24px;
+  padding-right: 24px;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.item {
+  color: var(--muted);
+}
+
+.separator {
+  color: var(--accent);
+}
