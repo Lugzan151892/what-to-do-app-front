@@ -1,3 +1,5 @@
+'use client';
+
 import styles from '@/components/ui/button/wbutton.module.scss';
 import { EBUTTON_TYPE } from './interfaces';
 import { useMemo } from 'react';
