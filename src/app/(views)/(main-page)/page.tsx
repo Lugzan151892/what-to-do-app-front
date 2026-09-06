@@ -5,6 +5,8 @@ import WButton from '@/components/ui/button/WButton';
 import { EBUTTON_TYPE } from '@/components/ui/button/interfaces';
 import FloatingCards from '@/app/(views)/(main-page)/components/FloatingCards/FloatingCards';
 import TickerText from './components/TickerText/TickerText';
+import WorkDescription from './components/WorkDescription/WorkDescription';
+import OppurtunitiesSection from './components/OpportunitiesSection/OppurtunitiesSection';
 
 const MainPage = () => {
   return (
@@ -64,6 +66,8 @@ const MainPage = () => {
       </section>
       <FloatingCards />
       <TickerText />
+      <WorkDescription />
+      <OppurtunitiesSection />
       tut man page
     </div>
   );

@@ -1,0 +1,114 @@
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 48px 40px;
+  color: var(--cream);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.content {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.preHeadLine {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.headLine {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+  font-size: 110px;
+  color: var(--cream);
+  text-wrap: nowrap;
+}
+
+.cardsContainer {
+  width: 100%;
+  max-width: 64rem;
+  margin: 4rem auto 0;
+  height: 280px;
+  opacity: 0;
+  animation: fadeUp 1.3s ease 0.15s forwards;
+  display: flex;
+  gap: 24px;
+}
+
+.card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  max-width: 360px;
+}
+
+.iconContainer {
+  background: #ff55331f;
+  border: 1px solid #ff553333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  width: 48px;
+  height: 48px;
+}
+
+.cardNumber {
+  font-family: 'Fraunces', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+.cardText {
+  color: var(--cream);
+  font-weight: 700;
+  line-height: 28px;
+  font-family: 'Fraunces', serif;
+}
+
+.cardDescription {
+  color: var(--muted);
+  line-height: 1.625;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: start;
+}
