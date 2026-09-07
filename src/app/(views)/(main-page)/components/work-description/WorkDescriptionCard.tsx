@@ -1,6 +1,6 @@
-import workDescriptionStyles from '@/app/(views)/(main-page)/components/WorkDescription/workDescription.module.scss';
+import workDescriptionStyles from '@/app/(views)/(main-page)/components/work-description/workDescription.module.scss';
 import clsx from '@/app/utils/style-utils/clsx';
-import MainCardIcon, { TMainCardIcon } from '../main-card-icon/MainCardIcon';
+import MainCardIcon, { TMainCardIcon } from '@/app/(views)/(main-page)/components/main-card-icon/MainCardIcon';
 
 export interface IWorkDescriptionCardProps {
   order: string

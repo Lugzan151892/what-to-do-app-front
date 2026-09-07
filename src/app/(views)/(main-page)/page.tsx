@@ -3,10 +3,10 @@
 import mainsectionStyles from '@/app/(views)/(main-page)/styles/mainsection.module.scss';
 import WButton from '@/components/ui/button/WButton';
 import { EBUTTON_TYPE } from '@/components/ui/button/interfaces';
-import FloatingCards from '@/app/(views)/(main-page)/components/FloatingCards/FloatingCards';
-import TickerText from './components/TickerText/TickerText';
-import WorkDescription from './components/WorkDescription/WorkDescription';
-import OppurtunitiesSection from './components/OpportunitiesSection/OppurtunitiesSection';
+import FloatingCards from '@/app/(views)/(main-page)/components/floating-cards/FloatingCards';
+import TickerText from '@/app/(views)/(main-page)/components/ticker-text/TickerText';
+import WorkDescription from '@/app/(views)/(main-page)/components/work-description/WorkDescription';
+import OppurtunitiesSection from '@/app/(views)/(main-page)/components/opportunities-section/OppurtunitiesSection';
 
 const MainPage = () => {
   return (

@@ -1,5 +1,5 @@
 import clsx from '@/app/utils/style-utils/clsx';
-import tickerTextStyles from '@/app/(views)/(main-page)/components/TickerText/tickerText.module.scss';
+import tickerTextStyles from '@/app/(views)/(main-page)/components/ticker-text/tickerText.module.scss';
 
 const baseItems = ['Музеи', 'Парки', 'Рестораны', 'Спорт', 'Концерты', 'Кинотеатры'];
 

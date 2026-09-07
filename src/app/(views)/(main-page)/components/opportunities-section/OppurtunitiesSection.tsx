@@ -1,4 +1,4 @@
-import opportunitiesStyles from '@/app/(views)/(main-page)/components/OpportunitiesSection/oportunities.module.scss';
+import opportunitiesStyles from '@/app/(views)/(main-page)/components/opportunities-section/oportunities.module.scss';
 import clsx from '@/app/utils/style-utils/clsx';
 import WSwitchButton from '@/components/ui/switch-button/WSwitchButton';
 import MainCardIcon from '@/app/(views)/(main-page)/components/main-card-icon/MainCardIcon';
