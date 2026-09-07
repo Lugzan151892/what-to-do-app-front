@@ -6,7 +6,7 @@ import { EBUTTON_TYPE } from '@/components/ui/button/interfaces';
 import FloatingCards from '@/app/(views)/(main-page)/components/floating-cards/FloatingCards';
 import TickerText from '@/app/(views)/(main-page)/components/ticker-text/TickerText';
 import WorkDescription from '@/app/(views)/(main-page)/components/work-description/WorkDescription';
-import OppurtunitiesSection from '@/app/(views)/(main-page)/components/opportunities-section/OppurtunitiesSection';
+import OppurtunitiesSection from '@/app/(views)/(main-page)/components/opportunities-section/OpportunitiesSection';
 
 const MainPage = () => {
   return (

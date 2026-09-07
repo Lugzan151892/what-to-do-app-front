@@ -1,0 +1,82 @@
+.section {
+  padding: 80px 48px 40px;
+  color: var(--cream);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.content {
+  width: 100%;
+  max-width: 1152px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.cardOne {
+  grid-column: span 2 / span 2;
+}
+
+.preHeadLine {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.headLine {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-size: 70px;
+  color: var(--cream);
+  text-wrap: nowrap;
+}
+
+.headLineSecondary {
+  max-width: 320px;
+  color: var(--muted);
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.headerSecondary {
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.textSecondary {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.activityRowWrapper {
+  border-radius: 12px;
+  border-bottom: 1px solid var(--button-border);
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.activityRowText {
+  color: var(--cream);
+  font-weight: 500;
+}
+
+.activityRowDate {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+}
