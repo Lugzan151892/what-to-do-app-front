@@ -1,43 +1,23 @@
 import workDescriptionStyles from '@/app/(views)/(main-page)/components/WorkDescription/workDescription.module.scss';
-import Image from 'next/image';
-import clock from '@/assets/static-icons/clock.svg';
-import rate from '@/assets/static-icons/rate.svg';
-import generated from '@/assets/static-icons/generated.svg';
-import { useMemo } from 'react';
 import clsx from '@/app/utils/style-utils/clsx';
+import MainCardIcon, { TMainCardIcon } from '../main-card-icon/MainCardIcon';
 
 export interface IWorkDescriptionCardProps {
   order: string
   text: string
   description: string
-  icon: 'clock' | 'rate' | 'generated'
+  icon: TMainCardIcon
 }
 
 const WorkDescriptionCard: React.FC<IWorkDescriptionCardProps> = ({ order, text, description, icon }) => {
-  const getIcon = useMemo(() => {
-    if (icon === 'clock') {
-      return clock;
-    }
-
-    if (icon === 'generated') {
-      return generated;
-    }
-
-    return rate;
-  }, [icon]);
   return (
     <div className={clsx('w-card', workDescriptionStyles.card)}>
       <div className={workDescriptionStyles.cardNumber}>
         {order}
       </div>
-      <div className={workDescriptionStyles.iconContainer}>
-        <Image
-          alt="clock"
-          src={getIcon}
-          height={28}
-          width={28}
-        />
-      </div>
+      <MainCardIcon
+        icon={icon}
+      />
       <div className={workDescriptionStyles.cardText}>
         {text}
       </div>
