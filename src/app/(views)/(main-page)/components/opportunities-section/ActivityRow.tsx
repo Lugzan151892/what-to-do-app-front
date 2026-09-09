@@ -37,11 +37,11 @@ const OpportunityActivityRow: React.FC<Omit<IOpportunityActivityItem, 'id'>> = (
         <div className={opportunitiesStyles.activityRowText}>
           {text}
         </div>
-        <div className={opportunitiesStyles.activityRowDescription}>
+        <div className={opportunitiesStyles.activityRowDate}>
           {date}
         </div>
       </div>
-      <div>
+      <div className="w-ml-auto">
         <RateStars
           total={5}
           filled={rate}
