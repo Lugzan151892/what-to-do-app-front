@@ -1,6 +1,5 @@
 .section {
   padding: 80px 48px 40px;
-  color: var(--cream);
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -20,44 +19,22 @@
 }
 
 .preHeadLine {
-  color: var(--accent);
   font-size: 11px;
-  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent);
   opacity: 0.9;
-  margin-bottom: 20px;
 }
 
 .headLine {
   font-family: 'Fraunces', serif;
-  font-weight: 900;
   line-height: 1;
   letter-spacing: -0.025em;
   font-size: 70px;
-  color: var(--cream);
   text-wrap: nowrap;
 }
 
 .headLineSecondary {
   max-width: 320px;
-  color: var(--muted);
-  line-height: 20px;
-  font-size: 14px;
-}
-
-.headerSecondary {
-  color: var(--cream);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.textSecondary {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 20px;
 }
 
 .activityRowWrapper {
@@ -70,13 +47,8 @@
   }
 }
 
-.activityRowText {
-  color: var(--cream);
-  font-weight: 500;
-}
-
-.activityRowDate {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 16px;
+.city {
+  background: rgba(255, 85, 51, 0.08);
+  border: 1px solid rgba(255, 85, 51, 0.15);
+  border-radius: 12px;
 }

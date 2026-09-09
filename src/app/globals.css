@@ -1,6 +1,7 @@
 @import '@/styles/colors.css';
 @import '@/styles/variables.scss';
 @import '@/styles/flexes.scss';
+@import '@/styles/text.scss';
 
 html {
   height: 100%;

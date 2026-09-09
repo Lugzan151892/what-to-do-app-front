@@ -34,10 +34,10 @@ const OpportunityActivityRow: React.FC<Omit<IOpportunityActivityItem, 'id'>> = (
         />
       </div>
       <div className="w-flex w-flex-column">
-        <div className={opportunitiesStyles.activityRowText}>
+        <div className="w-text-color--cream w-fweight-500">
           {text}
         </div>
-        <div className={opportunitiesStyles.activityRowDate}>
+        <div className="w-text-xs w-text-color--muted">
           {date}
         </div>
       </div>

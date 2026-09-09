@@ -13,8 +13,6 @@
 .wrapper {
   position: relative;
   display: flex;
-  height: 0.5rem;
-  width: 0.5rem;
 }
 
 .slow {
@@ -32,7 +30,5 @@
   position: relative;
   display: inline-flex;
   border-radius: 50%;
-  height: 0.5rem;
-  width: 0.5rem;
   background: var(--accent);
 }
