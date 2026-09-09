@@ -5,6 +5,7 @@ import MainCardIcon from '@/app/(views)/(main-page)/components/main-card-icon/Ma
 import OpportunityActivityRow, { IOpportunityActivityItem } from './ActivityRow';
 import ProgressBar from '@/components/ui/progress-bar/ProgressBar';
 import PulsedDot from '@/components/ui/pulsed-dot/PulsedDot';
+import Stepper from '@/components/ui/stepper/Stepper';
 
 const activities: Array<IOpportunityActivityItem> = [
   { id: 1, icon: 'ice-skate', text: 'Каток в Парке Горького', date: '11 января 2025', rate: 5 },
@@ -117,12 +118,15 @@ const OppurtunitiesSection = () => {
             <span className="w-mt-16 w-text-color--cream w-text-base w-fweight-700">
               Только новое
             </span>
-            <span className="w-text-color--muted w-text-sm">
+            <span className="w-text-color--muted w-text-sm w-mb-20">
               Фильтр «только то, что ещё не пробовали» — никаких повторов без вашего желания
             </span>
-            <div>
-
-            </div>
+            <WSwitchButton
+              label="Исключить пройденное"
+              checked={true}
+              labelPosition="before"
+              onChange={() => true}
+            />
           </div>
           <div className="w-card w-p-24 w-flex w-flex-column">
             <MainCardIcon
@@ -134,6 +138,7 @@ const OppurtunitiesSection = () => {
             <span className="w-text-color--muted w-text-sm">
               Укажите, сколько вас — AI подберёт подходящие варианты
             </span>
+            <Stepper suffix="чел." />
           </div>
         </div>
       </div>

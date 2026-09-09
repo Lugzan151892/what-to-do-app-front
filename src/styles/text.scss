@@ -13,6 +13,11 @@
   line-height: 24px;
 }
 
+.w-text-2xl {
+    font-size: 24px;
+    line-height: 32px;
+}
+
 .w-text-color--cream {
   color: var(--cream);
 }
@@ -23,6 +28,10 @@
 
 .w-text-color--accent {
   color: var(--accent);
+}
+
+.w-text-fraunces {
+  font-family: 'Fraunces', serif;
 }
 
 @for $i from 1 through 9 {
