@@ -1,0 +1,22 @@
+.label {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.percent {
+  color: var(--cream);
+}
+
+.progressWrapper {
+  height: 8px;
+  border-radius: 999px;
+  background: #ffffff14;
+}
+
+.progress {
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  transition: all 300ms ease-in-out;
+  border-radius: 999px;
+  height: 8px;
+}

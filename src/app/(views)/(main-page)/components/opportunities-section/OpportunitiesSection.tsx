@@ -3,6 +3,7 @@ import clsx from '@/app/utils/style-utils/clsx';
 import WSwitchButton from '@/components/ui/switch-button/WSwitchButton';
 import MainCardIcon from '@/app/(views)/(main-page)/components/main-card-icon/MainCardIcon';
 import OpportunityActivityRow, { IOpportunityActivityItem } from './ActivityRow';
+import ProgressBar from '@/components/ui/progress-bar/ProgressBar';
 
 const activities: Array<IOpportunityActivityItem> = [
   { id: 1, icon: 'ice-skate', text: 'Каток в Парке Горького', date: '11 января 2025', rate: 5 },
@@ -63,6 +64,28 @@ const OppurtunitiesSection = () => {
             <span className={clsx(opportunitiesStyles.textSecondary, 'w-mt-16')}>
               AI анализирует, что вам нравится и строит вкусовой профиль
             </span>
+            <div className="w-flex w-flex-column w-gap-12 w-mt-16">
+              <ProgressBar
+                total={100}
+                filled={92}
+                text="Активный отдых"
+              />
+              <ProgressBar
+                total={100}
+                filled={78}
+                text="Культура"
+              />
+              <ProgressBar
+                total={100}
+                filled={65}
+                text="Еда и рестораны"
+              />
+              <ProgressBar
+                total={100}
+                filled={50}
+                text="Развлечения"
+              />
+            </div>
           </div>
           <div className="w-card w-p-24 w-flex w-flex-column">
             <MainCardIcon
