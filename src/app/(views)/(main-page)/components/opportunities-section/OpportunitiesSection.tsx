@@ -135,7 +135,7 @@ const OppurtunitiesSection = () => {
             <span className="w-mt-16 w-text-color--cream w-text-base w-fweight-700">
               Для любой компании
             </span>
-            <span className="w-text-color--muted w-text-sm">
+            <span className="w-text-color--muted w-text-sm w-mb-20">
               Укажите, сколько вас — AI подберёт подходящие варианты
             </span>
             <Stepper suffix="чел." />

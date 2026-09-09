@@ -20,6 +20,9 @@ const Stepper: React.FC<IStepperProps> = ({ value = 0, prefix, suffix, onChange 
     <div className="w-flex w-flex--space-between w-align-center">
       <WButton
         text="−"
+        radius={8}
+        paddingX={10}
+        paddingY={10}
         onClick={() => { if (value && value >= 0) handleChange(value - 1); }}
       />
       <div className="w-flex w-gap-4 w-align-center">
@@ -39,6 +42,9 @@ const Stepper: React.FC<IStepperProps> = ({ value = 0, prefix, suffix, onChange 
       </div>
       <WButton
         text="+"
+        radius={8}
+        paddingX={10}
+        paddingY={10}
         onClick={() => { if (value && value >= 0) handleChange(value + 1); }}
       />
     </div>
