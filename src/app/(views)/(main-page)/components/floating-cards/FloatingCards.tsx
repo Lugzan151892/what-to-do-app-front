@@ -1,4 +1,4 @@
-import floatingCardsStyles from '@/app/(views)/(main-page)/components/FloatingCards/floatingcards.module.scss';
+import floatingCardsStyles from '@/app/(views)/(main-page)/components/floating-cards/floatingcards.module.scss';
 import Image from 'next/image';
 import masksIcon from '@/assets/static-icons/masks.svg';
 import bicycleIcon from '@/assets/static-icons/bicycle.svg';
