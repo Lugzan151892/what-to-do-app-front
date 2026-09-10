@@ -6,12 +6,22 @@ import { useMemo } from 'react';
 import clsx from '@/app/utils/style-utils/clsx';
 
 interface IWButtonProps {
+  radius?: number
+  paddingX?: number
+  paddingY?: number
   text: string
   type?: EBUTTON_TYPE
   onClick: () => void
 }
 
-const WButton: React.FC<IWButtonProps> = ({ text, type = EBUTTON_TYPE.BORDERED, onClick }) => {
+const WButton: React.FC<IWButtonProps> = ({
+  text,
+  type = EBUTTON_TYPE.BORDERED,
+  radius = 999,
+  paddingX = 20,
+  paddingY = 10,
+  onClick,
+}) => {
   const className = useMemo(() => {
     if (type === EBUTTON_TYPE.BORDERED) {
       return styles.wButtonBordered;
@@ -19,10 +29,20 @@ const WButton: React.FC<IWButtonProps> = ({ text, type = EBUTTON_TYPE.BORDERED, 
 
     return styles.wButtonFilled;
   }, [type]);
+
+  const computedStyles = useMemo(() => ({
+    borderRadius: `${radius}px`,
+    paddingTop: `${paddingY}px`,
+    paddingBottom: `${paddingY}px`,
+    paddingLeft: `${paddingX}px`,
+    paddingRight: `${paddingX}px`,
+  }), [radius, paddingY, paddingX]);
+
   return (
     <button
-      className={clsx('w-px-20 w-py-10', styles.button, className)}
+      className={clsx(styles.button, className)}
       onClick={onClick}
+      style={computedStyles}
     >
       {text}
     </button>

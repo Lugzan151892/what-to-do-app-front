@@ -2,17 +2,19 @@ import switchbuttonStyles from '@/components/ui/switch-button/wswitchbutton.modu
 import { ChangeEvent } from 'react';
 
 interface IWSwitchButtonProps {
-  checked: boolean
+  checked?: boolean
   onChange: (state: boolean) => boolean
-  label: string
-  disabled: boolean
-  name: string
+  label?: string
+  labelPosition?: 'before' | 'after'
+  disabled?: boolean
+  name?: string
 }
 
 const WSwitchButton: React.FC<IWSwitchButtonProps> = ({
   checked,
   onChange,
   label,
+  labelPosition = 'after',
   disabled = false,
   name,
 }) => {
@@ -23,7 +25,8 @@ const WSwitchButton: React.FC<IWSwitchButtonProps> = ({
   };
 
   return (
-    <label className={switchbuttonStyles.wrapper}>
+    <label className="w-flex w-align-center w-flex--space-between">
+      {label && labelPosition === 'before' && <span className={switchbuttonStyles.label}>{label}</span>}
       <input
         name={name}
         checked={checked}
@@ -34,7 +37,7 @@ const WSwitchButton: React.FC<IWSwitchButtonProps> = ({
       >
       </input>
       <span className={switchbuttonStyles.switch}></span>
-      {label && <span className={switchbuttonStyles.label}>{label}</span>}
+      {label && labelPosition === 'after' && <span className={switchbuttonStyles.label}>{label}</span>}
     </label>
   );
 };

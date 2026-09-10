@@ -7,6 +7,7 @@ import FloatingCards from '@/app/(views)/(main-page)/components/floating-cards/F
 import TickerText from '@/app/(views)/(main-page)/components/ticker-text/TickerText';
 import WorkDescription from '@/app/(views)/(main-page)/components/work-description/WorkDescription';
 import OppurtunitiesSection from '@/app/(views)/(main-page)/components/opportunities-section/OpportunitiesSection';
+import PulsedDot from '@/components/ui/pulsed-dot/PulsedDot';
 
 const MainPage = () => {
   return (
@@ -14,10 +15,7 @@ const MainPage = () => {
       <section className={mainsectionStyles.mainSection}>
         <div className={mainsectionStyles.mainContent}>
           <div className={mainsectionStyles.tagWrapper}>
-            <span className={mainsectionStyles.pingWrapper}>
-              <span className={mainsectionStyles.pingSlow} />
-              <span className={mainsectionStyles.pingDot} />
-            </span>
+            <PulsedDot />
             <span>
               AI-помощник для лучших выходных
             </span>
