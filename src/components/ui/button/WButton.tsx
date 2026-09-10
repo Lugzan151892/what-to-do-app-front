@@ -14,6 +14,7 @@ interface IWButtonProps {
   type?: EBUTTON_TYPE
   fullWidth?: boolean
   selected?: boolean
+  slotBefore?: React.ReactNode
   onClick: () => void
 }
 
@@ -26,6 +27,7 @@ const WButton: React.FC<IWButtonProps> = ({
   radius = 999,
   paddingX = 20,
   paddingY = 10,
+  slotBefore,
   onClick,
 }) => {
   const className = useMemo(() => {
@@ -57,7 +59,12 @@ const WButton: React.FC<IWButtonProps> = ({
       onClick={onClick}
       style={computedStyles}
     >
-      {text}
+      <div className="w-flex w-align-center w-justify-center">
+        {slotBefore}
+        <span className={clsx(!!slotBefore && 'w-ml-8')}>
+          {text}
+        </span>
+      </div>
     </button>
   );
 };

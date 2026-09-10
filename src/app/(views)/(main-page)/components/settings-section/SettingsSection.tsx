@@ -5,6 +5,11 @@ import ButtonOptions from '@/components/ui/button-options/ButtonOptions';
 import WSwitchButton from '@/components/ui/switch-button/WSwitchButton';
 import WButton from '@/components/ui/button/WButton';
 import { EBUTTON_SIZE, EBUTTON_TYPE } from '@/components/ui/button/interfaces';
+import Image from 'next/image';
+import generation from '@/assets/static-icons/generation.svg';
+import GeneratedCard from '../generated-card/GeneratedCard';
+import generateExample1 from '@/assets/images/generate_example_1.jpg';
+import generateExample2 from '@/assets/images/generate_example_2.jpg';
 
 const SettingsSection = () => {
   return (
@@ -52,11 +57,32 @@ const SettingsSection = () => {
                 paddingY={16}
                 radius={12}
                 text="Сгенерировать идеи"
+                slotBefore={(
+                  <Image
+                    alt="Иконка генерации"
+                    src={generation}
+                    width={20}
+                    height={20}
+                  />
+                )}
               />
             </div>
           </div>
           <div>
-            card 2
+            <div className="w-flex w-align-center w-gap-12">
+              <AiBadge />
+              <span className="w-text-sm w-text-color--muted">Результат генерации · Москва · Сегодня</span>
+            </div>
+            <GeneratedCard
+              title="Выставка «Иллюзии»"
+              description="ГМИИ им. Пушкина · Открыта сегодня"
+              background={generateExample1}
+            />
+            <GeneratedCard
+              title="Кулинарный класс: суши"
+              description="Урок на 2–6 человек · Воскресенье"
+              background={generateExample2}
+            />
           </div>
         </div>
       </div>

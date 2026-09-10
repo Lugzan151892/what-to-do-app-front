@@ -1,0 +1,16 @@
+.header {
+  height: 144px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.badge {
+  top: 12px;
+  right: 12px;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+}
