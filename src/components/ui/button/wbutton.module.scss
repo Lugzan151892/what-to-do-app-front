@@ -3,6 +3,11 @@
   border-radius: 999px;
   display: block;
   height: max-content;
+  text-wrap: nowrap;
+}
+
+.fullWidth {
+  width: 100%;
 }
 
 .wButtonBordered {
@@ -17,6 +22,11 @@
     border-color: #ff553366;
     background: #ff55330f;
   }
+}
+
+.selected {
+  border-color: #ff553366;
+  background: #ff55330f;
 }
 
 .wButtonFilled {

@@ -1,0 +1,33 @@
+.section {
+  padding: 80px 48px 40px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.content {
+  width: 100%;
+  max-width: 1152px;
+}
+
+.preHeadLine {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.headLine {
+  font-family: 'Fraunces', serif;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-size: 70px;
+  text-wrap: nowrap;
+}
+
+.headLineSecondary {
+  max-width: 520px;
+}
+
+.header {
+  border-bottom: 1px solid var(--button-border);
+  background: rgba(255, 85, 51, 0.05);
+}

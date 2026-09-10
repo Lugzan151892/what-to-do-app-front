@@ -13,6 +13,11 @@
   line-height: 24px;
 }
 
+.w-text-lg {
+  font-size: 18px;
+  line-height: 28px;
+}
+
 .w-text-2xl {
     font-size: 24px;
     line-height: 32px;
@@ -32,6 +37,10 @@
 
 .w-text-fraunces {
   font-family: 'Fraunces', serif;
+}
+
+.w-text-center {
+  text-align: center;
 }
 
 @for $i from 1 through 9 {

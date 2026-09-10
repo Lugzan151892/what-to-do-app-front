@@ -1,20 +1,27 @@
+import clsx from '@/app/utils/style-utils/clsx';
 import switchbuttonStyles from '@/components/ui/switch-button/wswitchbutton.module.scss';
 import { ChangeEvent } from 'react';
 
 interface IWSwitchButtonProps {
+  className?: string
   checked?: boolean
   onChange: (state: boolean) => boolean
   label?: string
   labelPosition?: 'before' | 'after'
+  hint?: string
+  bordered?: boolean
   disabled?: boolean
   name?: string
 }
 
 const WSwitchButton: React.FC<IWSwitchButtonProps> = ({
+  className,
   checked,
   onChange,
   label,
   labelPosition = 'after',
+  hint,
+  bordered,
   disabled = false,
   name,
 }) => {
@@ -24,9 +31,18 @@ const WSwitchButton: React.FC<IWSwitchButtonProps> = ({
     }
   };
 
+  const renderLabel = () => {
+    return (
+      <div className="w-flex w-flex-column w-flex-start gap-2">
+        <span className="w-text-sm w-text-color--cream">{label}</span>
+        {!!hint && <span className="w-text-xs w-text-color--muted">{hint}</span>}
+      </div>
+    );
+  };
+
   return (
-    <label className="w-flex w-align-center w-flex--space-between">
-      {label && labelPosition === 'before' && <span className={switchbuttonStyles.label}>{label}</span>}
+    <label className={clsx(className, 'w-flex w-align-center w-flex--space-between w-gap-16', bordered && 'w-py-12 w-px-16', bordered && switchbuttonStyles.bordered)}>
+      {label && labelPosition === 'before' && renderLabel()}
       <input
         name={name}
         checked={checked}
@@ -37,7 +53,7 @@ const WSwitchButton: React.FC<IWSwitchButtonProps> = ({
       >
       </input>
       <span className={switchbuttonStyles.switch}></span>
-      {label && labelPosition === 'after' && <span className={switchbuttonStyles.label}>{label}</span>}
+      {label && labelPosition === 'after' && renderLabel()}
     </label>
   );
 };

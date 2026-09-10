@@ -1,0 +1,19 @@
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.badge {
+  width: max-content;
+  background: linear-gradient(135deg, #FF5533, #FFB84D);
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  color: var(--white);
+}
