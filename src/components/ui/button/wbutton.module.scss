@@ -3,6 +3,11 @@
   border-radius: 999px;
   display: block;
   height: max-content;
+  text-wrap: nowrap;
+}
+
+.fullWidth {
+  width: 100%;
 }
 
 .wButtonBordered {
@@ -10,12 +15,33 @@
   color: var(--cream);
   transition: all 0.2s ease;
   border: 1px solid var(--button-border);
-  font-size: 14px;
-  line-height: 20px;
 
   &:hover {
     border-color: #ff553366;
     background: #ff55330f;
+  }
+}
+
+.selected {
+  border-color: #ff553366;
+  background: #ff55330f;
+}
+
+.wButtonOption {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-weight: 500;
+  border: 1px solid var(--button-border);
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(255, 85, 51, 0.3);
+  }
+
+  &.selected {
+    background: rgba(255, 85, 51, 0.15);
+    border-color: rgba(255, 85, 51, 0.3);
+    color: var(--accent);
   }
 }
 

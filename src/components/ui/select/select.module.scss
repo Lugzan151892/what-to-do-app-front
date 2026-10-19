@@ -1,0 +1,55 @@
+.label {
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.field {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--button-border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: rgba(255, 85, 51, 0.3);
+  }
+
+  &:focus-within {
+    border-color: var(--accent);
+  }
+}
+
+.select {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--cream);
+  font-family: inherit;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  option {
+    background: var(--card);
+    color: var(--cream);
+  }
+}
+
+.withBefore {
+  padding-left: 40px;
+}
+
+.before {
+  left: 16px;
+  pointer-events: none;
+}
+
+.chevron {
+  right: 16px;
+  pointer-events: none;
+}

@@ -56,3 +56,15 @@
     box-shadow: 0 20px 60px rgba(255, 85, 51, 0.1);
   }
 }
+
+.w-w-full {
+  width: 100%;
+}
+
+.w-absolute {
+  position: absolute;
+}
+
+.w-relative {
+  position: relative;
+}
