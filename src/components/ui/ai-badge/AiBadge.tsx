@@ -1,9 +1,13 @@
 import aiBadgeStyles from '@/components/ui/ai-badge/ai-badge.module.scss';
 
-const AiBadge = () => {
+interface IAiBadgeProps {
+  text?: string
+}
+
+const AiBadge: React.FC<IAiBadgeProps> = ({ text = 'AI' }) => {
   return (
     <div className={aiBadgeStyles.badge}>
-      AI
+      {text}
     </div>
   );
 };

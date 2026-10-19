@@ -1,0 +1,31 @@
+.tabs {
+  border-bottom: 1px solid var(--button-border);
+}
+
+.tab {
+  position: relative;
+  padding: 10px 0;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--muted);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--cream);
+  }
+}
+
+.active {
+  color: var(--cream);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  }
+}

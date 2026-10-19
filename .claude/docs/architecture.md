@@ -12,7 +12,12 @@ src/
 │   │   │   ├── page.tsx              # Лендинг: hero + секции
 │   │   │   ├── styles/               # Стили самой страницы (mainsection.module.scss)
 │   │   │   └── components/           # Компоненты, используемые ТОЛЬКО этой страницей
-│   │   └── login/page.tsx            # URL "/login" (заглушка)
+│   │   └── (auth)/                   # Route group авторизации
+│   │       ├── layout.tsx            # Фон, AuthHeader, карточка (AuthTabs + форма + SocialAuth), AuthPromo, футер
+│   │       ├── login/page.tsx        # URL "/login" — форма входа (только UI)
+│   │       ├── registration/page.tsx # URL "/registration" — форма регистрации (только UI)
+│   │       ├── styles/auth.module.scss
+│   │       └── components/           # auth-header, auth-tabs, social-auth, auth-promo
 │   ├── utils/style-utils/clsx.ts     # Утилита склейки классов
 │   ├── page.module.css, test.tsx     # Остатки create-next-app (не используются)
 ├── components/                       # Общие (переиспользуемые) компоненты
