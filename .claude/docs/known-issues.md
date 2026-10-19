@@ -8,7 +8,6 @@
 - `MainCardIcon`: `alt="clock"` для всех иконок.
 
 ## Стили
-- `login/page.tsx` использует Tailwind-классы, которых нет в проекте.
 - В `OpportunitiesSection` опечатка `w-text-sx`.
 - `.w-gradient-text` объявлен дважды в `colors.css`; `w-fweight-*` генерируется в двух местах (`text.scss` и цикл 100…900 по каждому числу в `variables.scss`).
 - `floatingcards.module.scss` дублирует цвета SCSS-переменными и свой `.aiBadge` вместо `var(--...)` / `AiBadge`; звёзды там не через `RateStars`.
@@ -17,7 +16,7 @@
 - В `colors.css` блок `prefers-color-scheme: dark` задаёт неиспользуемые `--background/--foreground`.
 
 ## Линт
-- `npm run lint` падает на старых файлах: `(main-page)/layout.tsx`, `login/page.tsx`, `test.tsx` (кавычки, `;`, отступы) и `clsx.ts` (`any`).
+- `npm run lint` падает на старых файлах: `(main-page)/layout.tsx`, `test.tsx` (кавычки, `;`, отступы) и `clsx.ts` (`any`).
 
 ## Мусор / заглушки
 - Строки `tut main page layout`, `tut man page` в `layout.tsx`/`page.tsx`.

@@ -1,0 +1,57 @@
+.label {
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--button-border);
+  border-radius: 14px;
+  color: var(--cream);
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: rgba(245, 240, 232, 0.25);
+  }
+
+  &:hover {
+    border-color: rgba(255, 85, 51, 0.3);
+  }
+
+  &:focus {
+    border-color: var(--accent);
+    background: rgba(255, 85, 51, 0.03);
+    box-shadow: 0 0 20px rgba(255, 85, 51, 0.15);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.withToggle {
+  padding-right: 44px;
+}
+
+.toggle {
+  right: 14px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.toggleActive {
+  opacity: 1;
+}

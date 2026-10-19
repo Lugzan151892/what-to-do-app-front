@@ -9,6 +9,8 @@
   --button-border: #ffffff12;
   --accent-blue: #4DAAFF;
   --accent-violet: #8B5CF6;
+  --accent-green: #10B981;
+  --accent-green-dark: #059669;
 }
 
 @media (prefers-color-scheme: dark) {

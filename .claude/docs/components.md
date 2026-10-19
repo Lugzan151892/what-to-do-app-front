@@ -12,7 +12,9 @@
 | `Stepper` (`ui/stepper/`) | `value?=0`, `prefix?`, `suffix?`, `onChange?(v)` | Кнопки −/+ на `WButton`, значение шрифтом Fraunces |
 | `ProgressBar` (`ui/progress-bar/`) | `filled`, `total`, `text?` | Анимирует ширину через rAF; показывает `%` если есть `text` |
 | `PulsedDot` (`ui/pulsed-dot/`) | `size?=8` | Пульсирующая точка цвета accent |
-| `AiBadge` (`ui/ai-badge/`) | — | Плашка «AI» с анимированным градиентом |
+| `AiBadge` (`ui/ai-badge/`) | `text?='AI'` | Плашка с анимированным градиентом |
+| `WInput` (`ui/input/`) | `type?: TInputType` (`text`/`email`/`password`), `value?`, `label?`, `placeholder?`, `name?`, `autoComplete?`, `required?`, `minLength?`, `disabled?`, `slotLabelAfter?: ReactNode`, `onChange?(value)` | `'use client'`. Для `password` — встроенная кнопка показать/скрыть. `slotLabelAfter` — справа от лейбла (ссылка «Забыли пароль?») |
+| `WCheckbox` (`ui/checkbox/`) | `checked?`, `label?`, `name?`, `disabled?`, `onChange?(state)` | `'use client'`. Нативный checkbox с кастомным оформлением |
 
 Общие типы опций — `src/components/ui/interfaces.ts`: `TOptionId = string | number`, `IOption { id, text }`. Используются во всех компонентах выбора.
 
@@ -37,6 +39,14 @@
 | `NumbersSection` | Полоса с цифрами: пользователи, «нашли новое», города, средняя оценка (2 колонки на мобильных → 4) |
 | `TestimonialsSection` | «Отзывы» — 3 карточки `w-card`: звёзды `RateStars`, текст, аватар-инициал с градиентом |
 | `CtaSection` | «Начните прямо сегодня» — финальный призыв: лого, заголовок, кнопка, свечение фоном |
+
+## Компоненты авторизации — `src/app/(views)/(auth)/components/`
+| Компонент | Назначение |
+|---|---|
+| `AuthHeader` | Шапка страниц авторизации: лого (ссылка на `/`) и «← На главную» |
+| `AuthTabs` | `'use client'`. Табы «Вход в аккаунт» / «Регистрация» — ссылки на `/login` и `/registration`, активный по `usePathname` |
+| `SocialAuth` | Разделитель «или войти через», кнопки VK / Яндекс / Telegram (без обработчиков), ссылка на политику |
+| `AuthPromo` | Правая колонка (≥ 1024px): заголовок, парящая карточка-пример, аватары |
 
 ## Иконки
 `src/assets/static-icons/*.svg` (+ `activitys/` для активностей). Использование:
