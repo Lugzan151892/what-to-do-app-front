@@ -16,6 +16,21 @@
 
 Enum'ы и общие интерфейсы компонента выносятся в `interfaces.ts` рядом (`ui/button/interfaces.ts`).
 
+## Импорты
+- Пути — **всегда абсолютные** через алиас `@/` (= `src/`), с полным путём до файла.
+- Относительные пути (`./`, `../`) не используем, даже для файлов в той же папке.
+- Пакеты из `node_modules` (`react`, `next/image`) импортируются как обычно.
+
+```tsx
+// ✅
+import SettingsSection from '@/app/(views)/(main-page)/components/settings-section/SettingsSection';
+import { EBUTTON_TYPE } from '@/components/ui/button/interfaces';
+
+// ❌
+import SettingsSection from './components/settings-section/SettingsSection';
+import WButton from '../button/WButton';
+```
+
 ## Шаблон компонента
 ```tsx
 'use client'; // только если нужны хуки/события и компонент может попасть в серверное дерево

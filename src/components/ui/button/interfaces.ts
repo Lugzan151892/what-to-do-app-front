@@ -7,4 +7,5 @@ export enum EBUTTON_TYPE {
 export enum EBUTTON_SIZE {
   XS = 'XS',
   SM = 'SM',
+  LG = 'LG',
 }

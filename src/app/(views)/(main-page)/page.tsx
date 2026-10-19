@@ -8,7 +8,10 @@ import TickerText from '@/app/(views)/(main-page)/components/ticker-text/TickerT
 import WorkDescription from '@/app/(views)/(main-page)/components/work-description/WorkDescription';
 import OppurtunitiesSection from '@/app/(views)/(main-page)/components/opportunities-section/OpportunitiesSection';
 import PulsedDot from '@/components/ui/pulsed-dot/PulsedDot';
-import SettingsSection from './components/settings-section/SettingsSection';
+import SettingsSection from '@/app/(views)/(main-page)/components/settings-section/SettingsSection';
+import NumbersSection from '@/app/(views)/(main-page)/components/numbers-section/NumbersSection';
+import TestimonialsSection from '@/app/(views)/(main-page)/components/testimonials-section/TestimonialsSection';
+import CtaSection from '@/app/(views)/(main-page)/components/cta-section/CtaSection';
 
 const MainPage = () => {
   return (
@@ -68,6 +71,9 @@ const MainPage = () => {
       <WorkDescription />
       <OppurtunitiesSection />
       <SettingsSection />
+      <NumbersSection />
+      <TestimonialsSection />
+      <CtaSection />
       tut man page
     </div>
   );
