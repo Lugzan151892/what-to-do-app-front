@@ -5,7 +5,7 @@ import { ChangeEvent } from 'react';
 interface IWSwitchButtonProps {
   className?: string
   checked?: boolean
-  onChange: (state: boolean) => boolean
+  onChange?: (state: boolean) => void
   label?: string
   labelPosition?: 'before' | 'after'
   hint?: string
@@ -33,7 +33,7 @@ const WSwitchButton: React.FC<IWSwitchButtonProps> = ({
 
   const renderLabel = () => {
     return (
-      <div className="w-flex w-flex-column w-flex-start gap-2">
+      <div className="w-flex w-flex-column w-align-start w-gap-2">
         <span className="w-text-sm w-text-color--cream">{label}</span>
         {!!hint && <span className="w-text-xs w-text-color--muted">{hint}</span>}
       </div>

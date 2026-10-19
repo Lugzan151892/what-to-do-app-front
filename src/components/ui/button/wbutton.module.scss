@@ -27,6 +27,24 @@
   background: #ff55330f;
 }
 
+.wButtonOption {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-weight: 500;
+  border: 1px solid var(--button-border);
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba(255, 85, 51, 0.3);
+  }
+
+  &.selected {
+    background: rgba(255, 85, 51, 0.15);
+    border-color: rgba(255, 85, 51, 0.3);
+    color: var(--accent);
+  }
+}
+
 .wButtonFilled {
   background: var(--accent);
   color: var(--white);

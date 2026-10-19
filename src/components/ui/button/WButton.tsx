@@ -15,7 +15,7 @@ interface IWButtonProps {
   fullWidth?: boolean
   selected?: boolean
   slotBefore?: React.ReactNode
-  onClick: () => void
+  onClick?: () => void
 }
 
 const WButton: React.FC<IWButtonProps> = ({
@@ -35,6 +35,10 @@ const WButton: React.FC<IWButtonProps> = ({
       return styles.wButtonBordered;
     }
 
+    if (type === EBUTTON_TYPE.OPTION) {
+      return styles.wButtonOption;
+    }
+
     return styles.wButtonFilled;
   }, [type]);
 
@@ -48,6 +52,7 @@ const WButton: React.FC<IWButtonProps> = ({
 
   return (
     <button
+      type="button"
       className={clsx(
         styles.button,
         className,
