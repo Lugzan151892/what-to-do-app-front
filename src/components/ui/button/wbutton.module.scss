@@ -1,13 +1,40 @@
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .button {
   cursor: pointer;
   border-radius: 999px;
   display: block;
   height: max-content;
   text-wrap: nowrap;
+  font-family: inherit;
 }
 
 .fullWidth {
   width: 100%;
+}
+
+.disabled {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.wButtonGradient {
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+  color: var(--white);
+  border: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(255, 85, 51, 0.4);
+  }
 }
 
 .wButtonBordered {

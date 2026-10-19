@@ -41,10 +41,12 @@ const MainPage = () => {
             <WButton
               text="Начать бесплатно →"
               type={EBUTTON_TYPE.FILLED}
+              href="/generation"
             />
             <WButton
               text="Смотреть демо"
               type={EBUTTON_TYPE.BORDERED}
+              href="/generation/result"
             />
           </div>
 

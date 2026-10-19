@@ -1,0 +1,148 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    z-index: 1;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--accent), var(--accent-secondary), transparent 60%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  &:hover .image {
+    transform: scale(1.03);
+  }
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  height: 256px;
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    width: 40%;
+    height: auto;
+    min-height: 100%;
+  }
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.overlay {
+  inset: 0;
+  background: linear-gradient(to top, var(--card), transparent 60%);
+
+  @media (min-width: 1024px) {
+    background: linear-gradient(to left, var(--card), transparent 60%);
+  }
+}
+
+.badge {
+  top: 16px;
+  left: 16px;
+}
+
+.star {
+  color: var(--accent-secondary);
+}
+
+.content {
+  width: 100%;
+  padding: 24px;
+
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
+}
+
+.preHeadLine {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-fraunces), serif;
+  font-size: 30px;
+  line-height: 36px;
+  color: var(--white);
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+.insight {
+  background: rgba(255, 85, 51, 0.1);
+  border: 1px solid rgba(255, 85, 51, 0.2);
+  border-radius: 16px;
+}
+
+.insightIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.insightText {
+  line-height: 1.625;
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.statLabel {
+  font-size: 11px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.4);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}

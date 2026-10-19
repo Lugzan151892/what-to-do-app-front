@@ -1,0 +1,10 @@
+.link {
+  img {
+    opacity: 0.45;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+}

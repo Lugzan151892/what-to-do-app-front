@@ -1,0 +1,22 @@
+.tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  color: var(--white);
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.uppercase {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rounded {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 16px;
+}
