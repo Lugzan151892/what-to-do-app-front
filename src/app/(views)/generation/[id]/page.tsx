@@ -7,14 +7,15 @@ import ideaPageStyles from '@/app/(views)/generation/[id]/styles/idea-page.modul
 import BackLink from '@/app/(views)/generation/components/back-link/BackLink';
 import GlassTag from '@/app/(views)/generation/components/glass-tag/GlassTag';
 import StatBadge from '@/app/(views)/generation/components/stat-badge/StatBadge';
-import FakeMap from '@/app/(views)/generation/components/fake-map/FakeMap';
 import IdeaActionPanel from '@/app/(views)/generation/components/idea-action-panel/IdeaActionPanel';
 import IdeaRate from '@/app/(views)/generation/components/idea-rate/IdeaRate';
 import PulsedDot from '@/components/ui/pulsed-dot/PulsedDot';
+import YandexMap from '@/components/yandex-map/YandexMap';
 import { getIdeaById, ideas } from '@/mocks/ideas';
 import eye from '@/assets/static-icons/eye.svg';
 import heart from '@/assets/static-icons/heart.svg';
 import locationPin from '@/assets/static-icons/location-pin.svg';
+import externalLink from '@/assets/static-icons/external-link.svg';
 
 interface IIdeaPageProps {
   params: Promise<{ id: string }>
@@ -190,7 +191,24 @@ const IdeaPage = async ({ params }: IIdeaPageProps) => {
                 )}
               </div>
             </div>
-            <FakeMap />
+            <YandexMap
+              coordinates={idea.coordinates}
+              title={idea.place}
+            />
+            <a
+              href={`https://yandex.ru/maps/?pt=${idea.coordinates[1]},${idea.coordinates[0]}&z=16&l=map`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-link w-flex--inline w-align-center w-gap-6 w-text-xs w-mt-12"
+            >
+              <Image
+                src={externalLink}
+                alt=""
+                width={14}
+                height={14}
+              />
+              Открыть в Яндекс Картах
+            </a>
           </section>
         </div>
 

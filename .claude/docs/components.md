@@ -28,6 +28,7 @@
 | `AppHeader` (`header/`) | `variant?: 'landing' \| 'app'`. Sticky-шапка: лого (ссылка на `/`), «Войти» → `/login`. `landing` — навигация + «Начать бесплатно» → `/generation`; `app` — без навигации, «Регистрация» → `/registration` |
 | `AppLogo` (`logo/`) | Квадрат «W» + надпись «Weeknd» (Fraunces); `small?` — уменьшенный вариант (футер) |
 | `AppFooter` (`footer/`) | Футер: лого, ссылки (`w-link`), копирайт. Подключён в `(main-page)/layout.tsx` |
+| `YandexMap` (`yandex-map/`) | `coordinates: TLatLng` ([широта, долгота]), `title?`, `height?=280` — `'use client'`. Яндекс Карты 2.1 (ключ не нужен): одна метка-точка accent, свои кнопки зума, тёмная подложка через CSS-фильтр. Загрузка API — хук `src/hooks/useYandexMapsV21.ts` (порт из allio-eva-front) |
 | `RateStars` (`rate-stars/`) | `total?`, `filled`, `size?` (px, по умолч. 12) — звёзды ★, заполненные цветом accent-secondary |
 
 ## Компоненты главной — `src/app/(views)/(main-page)/components/`
@@ -64,7 +65,6 @@
 | `IdeaActionPanel` | `idea` — sticky-панель идеи: AI-совпадение, цена, дата, места, кнопки |
 | `IdeaRate` | `'use client'`. «Уже пробовали это?» с `RateInput` |
 | `BackLink` | `text`, `fallbackHref` — `'use client'`, «← назад» через `router.back()` |
-| `FakeMap` | Заглушка карты |
 
 ## Иконки
 `src/assets/static-icons/*.svg` (+ `activitys/` для активностей). Использование:

@@ -1,3 +1,5 @@
+import { TLatLng } from '@/hooks/useYandexMapsV21';
+
 export interface IIdea {
   id: string
   title: string
@@ -6,6 +8,8 @@ export interface IIdea {
   place: string
   address: string
   metro?: string
+  /** [широта, долгота] */
+  coordinates: TLatLng
   shortInfo: string
   price: string
   priceUnit?: string
@@ -55,6 +59,7 @@ export const ideas: Array<IIdea> = [
     image: photo('immersive+dinner+dark+fancy+restaurant+aesthetic', 1200, 600),
     place: 'Особняк на Волхонке',
     address: 'Москва, Большой Знаменский переулок, 2с3',
+    coordinates: [55.748826, 37.603463],
     metro: 'Метро Кропоткинская (5 мин пешком)',
     shortInfo: 'Особняк на Волхонке · 4 500 ₽/чел',
     price: '4 500 ₽',
@@ -86,6 +91,7 @@ export const ideas: Array<IIdea> = [
     image: photo('neon+minigolf+glow+dark+entertainment'),
     place: 'Винзавод',
     address: 'Москва, 4-й Сыромятнический переулок, 1/8',
+    coordinates: [55.755624, 37.663787],
     metro: 'Метро Курская (10 мин пешком)',
     shortInfo: 'Винзавод · ~1 500 ₽/чел',
     price: '1 500 ₽',
@@ -117,6 +123,7 @@ export const ideas: Array<IIdea> = [
     image: photo('pottery+class+clay+hands+aesthetic'),
     place: 'Мастерская «Клин»',
     address: 'Москва, улица Покровка, 17',
+    coordinates: [55.759270, 37.647560],
     metro: 'Метро Чистые пруды (7 мин пешком)',
     shortInfo: 'Мастерская «Клин» · ~3 000 ₽/чел',
     price: '3 000 ₽',
@@ -148,6 +155,7 @@ export const ideas: Array<IIdea> = [
     image: photo('jazz+club+live+music+dim+lights'),
     place: 'Джаз-клуб на Таганке',
     address: 'Москва, Верхняя Радищевская улица, 21',
+    coordinates: [55.743220, 37.652690],
     metro: 'Метро Таганская (5 мин пешком)',
     shortInfo: 'Сегодня 20:00 · от 2 000 ₽',
     price: 'от 2 000 ₽',
@@ -177,6 +185,7 @@ export const ideas: Array<IIdea> = [
     image: photo('modern+art+gallery+exhibition+people'),
     place: 'Дом культуры на набережной',
     address: 'Москва, Болотная набережная, 15',
+    coordinates: [55.742530, 37.612730],
     metro: 'Метро Кропоткинская (12 мин пешком)',
     shortInfo: 'Дом культуры на набережной · Бесплатно',
     price: 'Бесплатно',
@@ -207,6 +216,7 @@ export const ideas: Array<IIdea> = [
     image: photo('modern+art+gallery+exhibition+aesthetic'),
     place: 'Галерея «Пространство»',
     address: 'Москва, Малая Никитская улица, 6',
+    coordinates: [55.757990, 37.597120],
     metro: 'Метро Арбатская (8 мин пешком)',
     shortInfo: 'Суббота утро · 2 500 ₽',
     price: '2 500 ₽',
@@ -238,6 +248,7 @@ export const ideas: Array<IIdea> = [
     image: photo('private+cinema+cozy+couple+wine'),
     place: 'Кинозал «Только вы»',
     address: 'Москва, Цветной бульвар, 11',
+    coordinates: [55.769550, 37.620470],
     metro: 'Метро Цветной бульвар (3 мин пешком)',
     shortInfo: 'Любое время · от 3 000 ₽',
     price: 'от 3 000 ₽',
