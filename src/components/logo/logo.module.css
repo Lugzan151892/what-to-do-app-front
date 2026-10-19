@@ -25,3 +25,18 @@
   letter-spacing: -0.45px;
   color: var(--cream);
 }
+
+.logoSmall {
+  width: 28px;
+  height: 28px;
+}
+
+.logoSmall .logoText {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.textSmall {
+  font-size: 16px;
+  line-height: 24px;
+}

@@ -10,6 +10,8 @@ import OppurtunitiesSection from '@/app/(views)/(main-page)/components/opportuni
 import PulsedDot from '@/components/ui/pulsed-dot/PulsedDot';
 import SettingsSection from '@/app/(views)/(main-page)/components/settings-section/SettingsSection';
 import NumbersSection from '@/app/(views)/(main-page)/components/numbers-section/NumbersSection';
+import TestimonialsSection from '@/app/(views)/(main-page)/components/testimonials-section/TestimonialsSection';
+import CtaSection from '@/app/(views)/(main-page)/components/cta-section/CtaSection';
 
 const MainPage = () => {
   return (
@@ -70,6 +72,8 @@ const MainPage = () => {
       <OppurtunitiesSection />
       <SettingsSection />
       <NumbersSection />
+      <TestimonialsSection />
+      <CtaSection />
       tut man page
     </div>
   );

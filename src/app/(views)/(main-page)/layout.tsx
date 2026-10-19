@@ -1,4 +1,5 @@
 import AppHeader from "@/components/header/AppHeader";
+import AppFooter from '@/components/footer/AppFooter';
 
 const MainPageLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -6,6 +7,7 @@ const MainPageLayout = ({ children }: { children: React.ReactNode }) => {
       <AppHeader />
       tut main page layout
       {children}
+      <AppFooter />
     </div>
   );
 }

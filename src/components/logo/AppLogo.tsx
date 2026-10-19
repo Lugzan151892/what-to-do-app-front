@@ -1,11 +1,16 @@
+import clsx from '@/app/utils/style-utils/clsx';
 import styles from '@/components/logo/logo.module.css';
 
-const AppLogo = () => {
+interface IAppLogoProps {
+  small?: boolean
+}
+
+const AppLogo: React.FC<IAppLogoProps> = ({ small }) => {
   return (
     <div
       className="w-flex w-flex-center w-gap-10"
     >
-      <div className={styles.logo}>
+      <div className={clsx(styles.logo, small && styles.logoSmall)}>
         <span
           className={styles.logoText}
           title=""
@@ -14,7 +19,7 @@ const AppLogo = () => {
         </span>
       </div>
       <span
-        className={styles.text}
+        className={clsx(styles.text, small && styles.textSmall)}
       >
         Weeknd
       </span>

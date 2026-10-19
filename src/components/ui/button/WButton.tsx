@@ -60,6 +60,7 @@ const WButton: React.FC<IWButtonProps> = ({
         fullWidth && styles.fullWidth,
         textSize === EBUTTON_SIZE.XS && 'w-text-xs',
         textSize === EBUTTON_SIZE.SM && 'w-text-sm',
+        textSize === EBUTTON_SIZE.LG && 'w-text-lg',
       )}
       onClick={onClick}
       style={computedStyles}
