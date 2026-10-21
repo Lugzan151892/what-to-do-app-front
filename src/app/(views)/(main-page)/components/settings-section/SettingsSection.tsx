@@ -42,7 +42,8 @@ const SettingsSection = () => {
 
   const generate = async () => {
     try {
-      const result = await Api.get();
+      const result = await Api.post('generate', {});
+      console.log(result);
     }
     catch (e) {
       console.log(e);
@@ -128,6 +129,23 @@ const SettingsSection = () => {
                     height={20}
                   />
                 )}
+              />
+              <WButton
+                type={EBUTTON_TYPE.FILLED}
+                textSize={EBUTTON_SIZE.SM}
+                paddingY={16}
+                radius={12}
+                text="Сгенерировать идеи (TEST)"
+                fullWidth
+                slotBefore={(
+                  <Image
+                    alt="Иконка генерации"
+                    src={generation}
+                    width={20}
+                    height={20}
+                  />
+                )}
+                onClick={generate}
               />
             </div>
           </div>
