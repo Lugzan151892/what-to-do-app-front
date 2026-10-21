@@ -18,6 +18,7 @@ import generation from '@/assets/static-icons/generation.svg';
 import locationPin from '@/assets/static-icons/location-pin.svg';
 import generateExample1 from '@/assets/images/generate_example_1.jpg';
 import generateExample2 from '@/assets/images/generate_example_2.jpg';
+import { Api } from '@/core/api/api';
 
 const SettingsSection = () => {
   const [city, setCity] = useState<TOptionId>('moscow');
@@ -38,6 +39,15 @@ const SettingsSection = () => {
 
     return `/generation/result?${query}`;
   }, [city, people, onlyNew, budget]);
+
+  const generate = async () => {
+    try {
+      const result = await Api.get();
+    }
+    catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <section className={clsx('w-flex w-flex-center w-text-color--cream', settingsStyles.section)}>
