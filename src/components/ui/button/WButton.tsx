@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import styles from '@/components/ui/button/wbutton.module.scss';
-import { EBUTTON_SIZE, EBUTTON_TYPE } from './interfaces';
+import { EBUTTON_SIZE, EBUTTON_TYPE } from '@/components/ui/button/interfaces';
 import { useMemo } from 'react';
 import clsx from '@/app/utils/style-utils/clsx';
 
@@ -14,6 +15,8 @@ interface IWButtonProps {
   type?: EBUTTON_TYPE
   fullWidth?: boolean
   selected?: boolean
+  disabled?: boolean
+  href?: string
   slotBefore?: React.ReactNode
   onClick?: () => void
 }
@@ -24,6 +27,8 @@ const WButton: React.FC<IWButtonProps> = ({
   textSize = EBUTTON_SIZE.XS,
   selected,
   fullWidth,
+  disabled,
+  href,
   radius = 999,
   paddingX = 20,
   paddingY = 10,
@@ -39,6 +44,10 @@ const WButton: React.FC<IWButtonProps> = ({
       return styles.wButtonOption;
     }
 
+    if (type === EBUTTON_TYPE.GRADIENT) {
+      return styles.wButtonGradient;
+    }
+
     return styles.wButtonFilled;
   }, [type]);
 
@@ -50,27 +59,48 @@ const WButton: React.FC<IWButtonProps> = ({
     paddingRight: `${paddingX}px`,
   }), [radius, paddingY, paddingX]);
 
+  const computedClassName = clsx(
+    styles.button,
+    className,
+    selected && styles.selected,
+    fullWidth && styles.fullWidth,
+    disabled && styles.disabled,
+    textSize === EBUTTON_SIZE.XS && 'w-text-xs',
+    textSize === EBUTTON_SIZE.SM && 'w-text-sm',
+    textSize === EBUTTON_SIZE.LG && 'w-text-lg',
+  );
+
+  const content = (
+    <div className="w-flex w-align-center w-justify-center">
+      {slotBefore}
+      <span className={clsx(!!slotBefore && 'w-ml-8')}>
+        {text}
+      </span>
+    </div>
+  );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={computedClassName}
+        style={computedStyles}
+        onClick={onClick}
+      >
+        {content}
+      </Link>
+    );
+  }
+
   return (
     <button
       type="button"
-      className={clsx(
-        styles.button,
-        className,
-        selected && styles.selected,
-        fullWidth && styles.fullWidth,
-        textSize === EBUTTON_SIZE.XS && 'w-text-xs',
-        textSize === EBUTTON_SIZE.SM && 'w-text-sm',
-        textSize === EBUTTON_SIZE.LG && 'w-text-lg',
-      )}
+      className={computedClassName}
+      disabled={disabled}
       onClick={onClick}
       style={computedStyles}
     >
-      <div className="w-flex w-align-center w-justify-center">
-        {slotBefore}
-        <span className={clsx(!!slotBefore && 'w-ml-8')}>
-          {text}
-        </span>
-      </div>
+      {content}
     </button>
   );
 };

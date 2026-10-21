@@ -27,6 +27,7 @@ const CtaSection = () => {
             radius={16}
             paddingX={40}
             paddingY={20}
+            href="/generation"
             fullWidth
           />
         </div>

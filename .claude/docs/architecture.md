@@ -18,7 +18,16 @@ src/
 │   │       ├── registration/page.tsx # URL "/registration" — форма регистрации (только UI)
 │   │       ├── styles/auth.module.scss
 │   │       └── components/           # auth-header, auth-tabs, social-auth, auth-promo
+│   │   └── generation/               # AI-генерация (доступна без авторизации)
+│   │       ├── layout.tsx            # Фон, AppHeader variant="app", AppFooter
+│   │       ├── page.tsx              # "/generation" — форма генератора + лента идей других пользователей
+│   │       ├── result/page.tsx       # "/generation/result?..." — результат: лучшее совпадение + альтернативы
+│   │       ├── [id]/page.tsx         # "/generation/<id>" — карточка идеи (404 для неизвестного id)
+│   │       ├── styles/               # generation-layout + generation.module.scss (общие стили трёх страниц)
+│   │       └── components/           # generator-form, community-feed, idea-card, best-match-card, ...
 │   ├── utils/style-utils/clsx.ts     # Утилита склейки классов
+│   ├── utils/generation/             # Настройки генерации <-> query-строка, сводка тегов
+│   ├── utils/text/plural.ts          # Склонение по числу
 │   ├── page.module.css, test.tsx     # Остатки create-next-app (не используются)
 ├── components/                       # Общие (переиспользуемые) компоненты
 │   ├── header/, logo/, rate-stars/   # Составные/брендовые
@@ -26,6 +35,9 @@ src/
 ├── assets/
 │   ├── images/                       # jpg-картинки (импортируются статически)
 │   └── static-icons/                 # svg-иконки; activitys/ — иконки активностей
+├── constants/                        # Справочники (generation-options: города, состав, бюджет, категории)
+├── hooks/                            # Общие React-хуки (useYandexMapsV21 — загрузка Яндекс Карт 2.1)
+├── mocks/                            # Мок-данные, общие для нескольких страниц (ideas.ts: идеи, лента, результат)
 └── styles/                           # Глобальные стили: цвета, flex, текст, отступы
 ```
 
@@ -43,11 +55,21 @@ src/
 
 ## Данные
 - Бэкенда/fetch пока нет. Данные для вёрстки — константы-массивы в файле компонента над ним (`const activities: Array<I...> = [...]`, `cardsData`, `baseItems`).
+- Данные, нужные нескольким страницам, — в `src/mocks/` (идеи генерации), справочники опций — в `src/constants/`.
+
+## Флоу генерации (на моках)
+- Точки входа: «Начать бесплатно» (hero, шапка, CTA) → `/generation`; «Смотреть демо» → `/generation/result`; «Сгенерировать идеи» в `SettingsSection` → сразу `/generation/result?<настройки>`.
+- Настройки передаются query-строкой (`buildGenerationQuery` / `parseGenerationSettings` в `utils/generation`): `city`, `people`, `budget`, `onlyNew=0|1`, `categories=a,b`. Невалидные значения → дефолты.
+- `GeneratorForm` имитирует запрос (спиннер 1.5 c) и делает `router.push` на результат. Результат всегда один и тот же (`generationResult` в моках), меняются только теги настроек.
+- «Изменить настройки» → `/generation?<те же настройки>`, форма предзаполняется. Карточки ведут на `/generation/<id>`, «Назад к идеям» — `router.back()` с fallback на `/generation`.
 - Стейт-менеджера нет; интерактив пока в основном заглушки (`onChange={() => true}`).
 
 ## Server / Client компоненты
 - `page.tsx` главной и `WButton` помечены `'use client'` → всё дерево главной клиентское, поэтому хуки в дочерних (`ProgressBar`, `MainCardIcon`) работают без директивы.
 - Новый компонент с хуками/обработчиками событий, который может использоваться из серверного компонента, — помечать `'use client'`.
+
+## Переменные окружения
+- `NEXT_PUBLIC_YANDEX_MAPS_API_KEY` — необязательный ключ Яндекс Карт; без него карта 2.1 тоже работает (для продакшена ключ рекомендуется).
 
 ## Конфиги
 - `next.config.ts` — разрешён remote-хост картинок `api.designfast.io`.

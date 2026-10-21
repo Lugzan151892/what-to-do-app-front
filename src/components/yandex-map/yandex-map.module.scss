@@ -1,0 +1,89 @@
+.map {
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.container {
+  inset: 0;
+
+  // У API 2.1 нет тёмной темы: инвертируем только слой подложки, метка и копирайты остаются как есть
+  :global([class$='ground-pane']) {
+    filter: invert(0.92) hue-rotate(180deg) saturate(0.6) brightness(0.95);
+  }
+}
+
+.placeholder {
+  inset: 0;
+  z-index: 1;
+  background: var(--card);
+}
+
+.marker {
+  position: absolute;
+  box-sizing: border-box;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(255, 85, 51, 0.3), 0 10px 20px rgba(255, 85, 51, 0.4);
+  transform: translate(-50%, -50%);
+}
+
+.zoom {
+  z-index: 2;
+  top: 50%;
+  right: 16px;
+  border-radius: 999px;
+  background: rgba(8, 8, 14, 0.5);
+  border: 1px solid var(--button-border);
+  backdrop-filter: blur(8px);
+  transform: translateY(-50%);
+}
+
+.zoomButton {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+
+  // Минус — горизонтальная черта, у плюса добавляется вертикальная
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 1px;
+    background: var(--cream);
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 85, 51, 0.2);
+    border-color: var(--accent);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.4;
+  }
+}
+
+.zoomButtonIn::after {
+  display: block;
+  transform: translate(-50%, -50%) rotate(90deg);
+}

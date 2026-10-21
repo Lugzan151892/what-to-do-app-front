@@ -1,0 +1,21 @@
+.badge {
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  color: var(--cream);
+
+  img {
+    opacity: 0.5;
+  }
+}
+
+.rating {
+  border-color: rgba(255, 184, 77, 0.3);
+}
+
+.accent {
+  background: rgba(255, 85, 51, 0.1);
+  border-color: rgba(255, 85, 51, 0.3);
+  color: var(--accent);
+}

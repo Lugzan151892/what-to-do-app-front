@@ -11,32 +11,13 @@ import WSwitchButton from '@/components/ui/switch-button/WSwitchButton';
 import WSelect from '@/components/ui/select/WSelect';
 import WButton from '@/components/ui/button/WButton';
 import { EBUTTON_SIZE, EBUTTON_TYPE } from '@/components/ui/button/interfaces';
-import { IOption, TOptionId } from '@/components/ui/interfaces';
+import { TOptionId } from '@/components/ui/interfaces';
+import { budgetOptions, cityOptions, peopleOptions } from '@/constants/generation-options';
+import { buildGenerationQuery, defaultGenerationSettings } from '@/app/utils/generation/generation-settings';
 import generation from '@/assets/static-icons/generation.svg';
 import locationPin from '@/assets/static-icons/location-pin.svg';
 import generateExample1 from '@/assets/images/generate_example_1.jpg';
 import generateExample2 from '@/assets/images/generate_example_2.jpg';
-
-const cities: Array<IOption> = [
-  { id: 'moscow', text: 'Москва' },
-  { id: 'spb', text: 'Санкт-Петербург' },
-  { id: 'kazan', text: 'Казань' },
-  { id: 'ekb', text: 'Екатеринбург' },
-  { id: 'nsk', text: 'Новосибирск' },
-];
-
-const peopleOptions: Array<IOption> = [
-  { id: 1, text: '1' },
-  { id: 2, text: '2' },
-  { id: 3, text: '3–5' },
-  { id: 4, text: '5+' },
-];
-
-const budgetOptions: Array<IOption> = [
-  { id: 1, text: 'Бесплатно' },
-  { id: 2, text: 'до 2 000 ₽' },
-  { id: 3, text: 'Любой' },
-];
 
 const SettingsSection = () => {
   const [city, setCity] = useState<TOptionId>('moscow');
@@ -44,7 +25,19 @@ const SettingsSection = () => {
   const [onlyNew, setOnlyNew] = useState(true);
   const [budget, setBudget] = useState<TOptionId>(2);
 
-  const cityName = useMemo(() => cities.find(c => c.id === city)?.text, [city]);
+  const cityName = useMemo(() => cityOptions.find(c => c.id === city)?.text, [city]);
+
+  const resultHref = useMemo(() => {
+    const query = buildGenerationQuery({
+      city,
+      people,
+      onlyNew,
+      budget,
+      categories: defaultGenerationSettings.categories,
+    });
+
+    return `/generation/result?${query}`;
+  }, [city, people, onlyNew, budget]);
 
   return (
     <section className={clsx('w-flex w-flex-center w-text-color--cream', settingsStyles.section)}>
@@ -74,7 +67,7 @@ const SettingsSection = () => {
               <WSelect
                 label="Ваш город"
                 name="city"
-                options={cities}
+                options={cityOptions}
                 value={city}
                 onChange={setCity}
                 slotBefore={(
@@ -115,6 +108,7 @@ const SettingsSection = () => {
                 paddingY={16}
                 radius={12}
                 text="Сгенерировать идеи"
+                href={resultHref}
                 fullWidth
                 slotBefore={(
                   <Image
