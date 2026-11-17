@@ -18,6 +18,7 @@ import generation from '@/assets/static-icons/generation.svg';
 import locationPin from '@/assets/static-icons/location-pin.svg';
 import generateExample1 from '@/assets/images/generate_example_1.jpg';
 import generateExample2 from '@/assets/images/generate_example_2.jpg';
+import { Api } from '@/core/api/api';
 
 const SettingsSection = () => {
   const [city, setCity] = useState<TOptionId>('moscow');
@@ -38,6 +39,16 @@ const SettingsSection = () => {
 
     return `/generation/result?${query}`;
   }, [city, people, onlyNew, budget]);
+
+  const generate = async () => {
+    try {
+      const result = await Api.post('generate', {});
+      console.log(result);
+    }
+    catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <section className={clsx('w-flex w-flex-center w-text-color--cream', settingsStyles.section)}>
@@ -118,6 +129,23 @@ const SettingsSection = () => {
                     height={20}
                   />
                 )}
+              />
+              <WButton
+                type={EBUTTON_TYPE.FILLED}
+                textSize={EBUTTON_SIZE.SM}
+                paddingY={16}
+                radius={12}
+                text="Сгенерировать идеи (TEST)"
+                fullWidth
+                slotBefore={(
+                  <Image
+                    alt="Иконка генерации"
+                    src={generation}
+                    width={20}
+                    height={20}
+                  />
+                )}
+                onClick={generate}
               />
             </div>
           </div>

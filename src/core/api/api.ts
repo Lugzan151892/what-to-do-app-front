@@ -6,7 +6,7 @@ interface IRequestOptions {
   body?: Record<string, any>
 }
 
-const BASE_URL = '/';
+const BASE_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/' : '/api';
 
 const isFileOrBlob = (value: unknown): value is File | Blob => {
   return (
@@ -58,7 +58,7 @@ const buildHybridbody = (payload: Record<string, any>): FormData => {
 };
 
 export class Api {
-  static request(path: string, options: IRequestOptions) {
+  static async request<T = unknown>(path: string, options: IRequestOptions): Promise<T> {
     let url = `${BASE_URL}${path}`;
     const { body, headers = {}, method } = options;
     const finalHeaders: Record<string, string> = { ...headers };
@@ -86,11 +86,17 @@ export class Api {
       }
     }
 
-    return fetch(url, {
+    const response = await fetch(url, {
       method,
       headers: finalHeaders,
       ...(finalBody && method !== 'GET' ? { body: finalBody } : {}),
     });
+
+    if (!response.ok) {
+      throw new Error(`${response.status} ${response.statusText}`);
+    }
+
+    return response.json();
   }
 
   static get(path: string, query: Record<string, string | number>) {
